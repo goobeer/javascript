@@ -15,9 +15,11 @@
             }
 
             var headerContainer = $(option.containerSelector + ' table tr:first');
-            headerContainer.css({ 'position': 'fixed', 'top': '-1px' });
+            
             var headerItems = headerContainer.children();
             var lastContainer = $(option.containerSelector + ' table tr:last');
+			var firstRowContainer=$(option.containerSelector + ' table tr:nth(1)');
+			headerContainer.css({ 'position': 'fixed', 'top': (firstRowContainer.offset().top-firstRowContainer.height()-1)+'px' });
             var tds = lastContainer.children();
             headerContainer.css(option.tabHeaderCss);
             tds.each(function (i, e) {
