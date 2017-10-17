@@ -84,8 +84,8 @@
 			tds.each(function (i, e) {
 				$(headerItems.get(i)).css({ 'width': $(e).css('width') });
 			});
-
-            $(option.containerSelector + ' table tr:nth(1)').children('td').css({ 'padding-top': headerContainer.css('height') });
+			
+            $(option.containerSelector + ' table tbody tr:nth(0)').children('td').css({ 'padding-top': headerContainer.css('height') });
 
             $(document).scroll(function (e) {
                 var distance = $(option.containerSelector).height() - e.target.scrollingElement.scrollTop - headerContainer.height() - lastContainer.height();
